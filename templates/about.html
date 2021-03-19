@@ -1,11 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
     <h1>About</h1>
     <p>This is Template</p>
-</body>
-</html>
+
+<p>
+    {{ my_text }}, {{my_number}}
+    {{my_list}}
+</p>
+
+<ul>
+{% for abc in my_list %}
+    {% if abc == 123 %}
+        <li>{{ forloop.counter }} - {{abc|add:22}}</li>
+    {% elif abc == "ACB" %}
+        <li>This is weird</li>
+    {% else %}
+        <li>{{forloop.counter}} - {{ abc }}</li>
+
+    {% endif %}
+{% endfor %}
+</ul>
+
+
+{% endblock %}
+
+{% block about_block %}
+    <h3>Funny story about ME</h3>
+{% endblock %}

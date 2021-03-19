@@ -5,6 +5,12 @@
     <title>Try Django dude!</title>
 </head>
 <body>
+    {% include 'navbar.html' %}
+
     {% block content %}{% endblock %}
+    {% block contact_block %}{% endblock %}
+    {% block about_block %}{% endblock %}
+
+    {% include 'footer.html' %}
 </body>
 </html>
